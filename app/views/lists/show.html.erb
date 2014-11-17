@@ -1,0 +1,5 @@
+This is the show page.
+<p><%= @list.heading %></p>
+<% @list.tasks.each do |task| %>
+	<p><%=task.description %></p>
+<% end %>

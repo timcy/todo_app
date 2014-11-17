@@ -1,0 +1,11 @@
+<%= simple_nested_form_for @list, :remote =>  ( @list.new_record? ? false : true ) do |f| %>
+  <div><%= link_to 'X', @list , method: :delete, :remote => true unless @list.new_record? %></div>
+	<div><%= f.input :heading, :label => false %></div>
+	<% @list.tasks.order(:created_at).each do |task| %>
+		<%= render :partial => 'lists/tasks_form', :locals =>{ :f => f, :t => task } %>
+	<% end %>
+	<%= render :partial => 'lists/tasks_form', :locals =>{ :f => f, :t => @list.tasks.build, hide_remove_link: true } %>
+  <p><%#= f.link_to_add "Add a task", :tasks %></p>
+	<%= f.button :submit, :hidden => true %>
+  <hr/>
+<% end %>

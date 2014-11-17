@@ -1,0 +1,34 @@
+<p>All the lists should show up here</p>
+<% @lists.each do |list| %>
+  <%= render :partial => 'lists/form', :locals => { :@list => list } %>
+<% end %>
+<script>
+    $(document).on('ready page:load', function () {
+    // Below is a better way to write the event binding as it can handle elements added through AJAX
+    $(document).on("click", '.link_to_remove', function(){
+    // $('.link_to_remove').click(function(){  // Not the best way to write the event binding
+      // console.log($(this).siblings('input[type="hidden"]'));
+      $(this).siblings('input[type="hidden"]').val('true');
+      $(this).parents('form:first').submit();
+      return false;      
+    });
+    $(document).on("click", 'input[type="checkbox"]', function(){
+    // $('.link_to_remove').click(function(){  // Not the best way to write the event binding
+      // console.log($(this).siblings('input[type="hidden"]'));
+      $(this).parents('form:first').submit();
+      return false;      
+    });
+    // $("input[type='text']").blur(function(){
+    //   $(this).parents('form:first').attr('data-remote','true');
+    //   $(this).parents('form:first').submit();
+    //   return false;
+    // });
+    // $("input[type='submit']").click(function(){
+    //   console.log("In here");
+    //   $(this).parents('form:first').attr('data-remote','false');
+    //   $(this).parents('form:first').removeData('data-remote');
+    //         $(this).parents('form:first').submit();
+    //   return false;
+    // });
+  });
+</script>

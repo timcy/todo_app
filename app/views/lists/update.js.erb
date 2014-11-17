@@ -1,0 +1,6 @@
+console.log("form#edit_list_<%= @list.id %>");
+$("form#edit_list_<%= @list.id %>").html("<%= raw escape_javascript(render :partial => '/lists/form', :locals => { :@list => @list } ) %>");
+$("form#edit_list_<%= @list.id %>").get(0).classList.add("ajaxified_form");
+var input_elements_array = $(".ajaxified_form").get(0).querySelectorAll('input.string');
+var add_new_task_element = input_elements_array[ input_elements_array.length - 1 ];
+add_new_task_element.focus();
