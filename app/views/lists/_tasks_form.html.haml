@@ -1,0 +1,9 @@
+= f.simple_fields_for :tasks, t do |task|
+  %div
+    /<%#= check_box_tag "list[tasks_attributes][#{t.id}][id]", t.id unless
+    /<%#= t.new_record? %>
+    = task.input :is_complete, :label => false unless t.new_record?
+    = task.input :description, :label => false
+    /<%#= link_to "x", @list( tasks_attributes :{ :id => t.id, "_destroy" => true } ), :method => :delete  %>
+    %div
+      = task.link_to_remove "x", :class => "link_to_remove" unless t.new_record?

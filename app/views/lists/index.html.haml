@@ -1,8 +1,9 @@
-<p>All the lists should show up here</p>
-<% @lists.each do |list| %>
-  <%= render :partial => 'lists/form', :locals => { :@list => list } %>
-<% end %>
-<script>
+All the lists should show up here
+- @lists.each do |list|
+  = render :partial => 'lists/form', :locals => { :@list => list }
+/ :javascript also works
+%script{:type=>"text/javascript"}
+  :plain
     $(document).on('ready page:load', function () {
     // Below is a better way to write the event binding as it can handle elements added through AJAX
     $(document).on("click", '.link_to_remove', function(){
@@ -31,4 +32,3 @@
     //   return false;
     // });
   });
-</script>

@@ -1,0 +1,6 @@
+This is the show page.
+%p 
+  = @list.heading
+- @list.tasks.each do |task|
+  %p
+    = task.description
