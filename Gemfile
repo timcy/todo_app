@@ -31,6 +31,8 @@ gem 'nested_form'
 
 gem 'haml-rails'
 
+gem 'yamlcss'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

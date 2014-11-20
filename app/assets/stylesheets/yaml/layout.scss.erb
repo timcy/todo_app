@@ -1,0 +1,33 @@
+@charset "utf-8";
+/**
+ * "Yet Another Multicolumn Layout" - YAML CSS Framework
+ *
+ * docs styles - dynamically built using Sass
+ *
+ * @copyright       © 2005-2013, Dirk Jesse
+ * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-CDL (http://www.yaml.de/license.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         ### version ###
+ */
+
+/* YAML Framework Components 
+@import url(<%= asset_path( '_yaml-var-globals') %>);
+*/
+
+/**/
+@import "yaml-var-globals",
+    "yaml-var-typography",
+    "yaml-mixins-core",
+    "base",
+    "navigation/vlist",
+    "navigation/hlist",
+    "forms/gray-theme",
+    "tabs",
+    "screen/typography",
+    "print/print";
+
+
+/* Screen Design */
+@import "screen";

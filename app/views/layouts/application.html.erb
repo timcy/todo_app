@@ -7,12 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div>
-    <%= link_to "Home", root_path %>
-    <%= link_to "Create new list", new_list_path %>
-    <%= link_to "Show all lists", lists_path %>
+  <div class='ym-wrapper'>
+    <div class=' ym-wbox ym-grid linearize-level-1 ym-equalize'>
+      <%= link_to "Home", root_path %>
+      <%= link_to "Create new list", new_list_path %>
+      <%= link_to "Show all lists", lists_path %>
+    </div>
+    <%= yield %>
   </div>
-<%= yield %>
+
 
 </body>
 </html>
