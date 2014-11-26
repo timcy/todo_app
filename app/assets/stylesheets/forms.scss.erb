@@ -1,0 +1,63 @@
+@mixin border_radius( $x: 5px ) {
+          border-radius: $x;
+  -webkit-border-radius: $x;
+      -ms-border-radius: $x;
+     -moz-border-radius: $x;
+}
+
+label{
+  /* Important for Safari */
+  display: block;  
+}
+
+input[type='text'], 
+textarea{
+  width             : 200px;
+  height            : 20px;
+  font-size         : 15px;
+  padding           : 3px 5px;
+  border            : 1px solid #CBCBCB;
+  @include border_radius(5px);
+  cursor: text;
+}
+
+/* Explicit definition required for Firefox */
+input[type='hidden']{
+  display: none;
+}
+/*small adjustments for Internet Explorer - all versions*/
+textarea {
+  overflow: auto;
+}
+/*  avoid jumping checkboxes & radiobuttons in IE8 */
+input[type="radio"]:focus,
+input[type="radio"]:hover,
+input[type="radio"]:active,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:hover,
+input[type="checkbox"]:active {
+  border:0 none;
+}
+
+input[type="image"],
+input[type="radio"],
+input[type="checkbox"],
+select,
+input[type='submit']{
+  cursor: pointer;
+}
+
+/* CSS for error messages */
+.input.field_with_errors input{ 
+  border-color      : #e93801;
+  color             : #e93801;
+}
+.input.field_with_errors span.error{
+  color             : #e93801;
+  padding           : 2px 0 0 5px;
+  display: block;
+}
+
+.border_radius{
+  @include border_radius(5px);
+}

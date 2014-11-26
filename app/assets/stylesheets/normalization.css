@@ -1,0 +1,145 @@
+/**
+ *  @section Normalisation Module
+ */
+
+/* (en) Global reset of paddings and margins for all HTML elements */
+* { margin:0 auto; padding:0; }
+
+/* (en) Correction: margin/padding reset caused too small select boxes. */
+option { padding-left:0.4em; }
+select { padding:1px; }
+
+/*
+* (en) Global fix of the Italics bugs in IE 5.x and IE 6
+*
+* @bugfix
+* @affected   IE 5.x/Win, IE6
+* @css-for    IE 5.x/Win, IE6
+* @valid      yes
+*/
+
+* html body * { overflow:visible; }
+
+/*
+* (en) Fix for rounding errors when scaling font sizes in older versions of Opera browser
+*      Standard values for colors and text alignment
+*
+*/
+body {
+  font-size:100%;
+  background:#fff;
+  color:#000;
+  text-align:left;
+}
+
+/* (en) avoid visible outlines on DIV and h[x] elements in Webkit browsers */
+div:target,
+h1:target,
+h2:target,
+h3:target,
+h4:target,
+h5:target,
+h6:target {
+  outline: 0 none;
+}
+
+/* (en) HTML5 - adjusting visual formatting model to block level */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* (en) HTML5 - default media element styles */
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/* (en) HTML5 - don't show <audio> element if there aren't controls */
+audio:not([controls]) {
+  display: none;
+}
+
+/* (en) HTML5 - add missing styling in IE & old FF for hidden attribute */
+[hidden] {
+  display: none;
+}
+
+/* (en) Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* (en) set correct box-modell in IE8/9 plus remove padding */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* (en) force consistant appearance of input[type="search"] elements in all browser */
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+/*input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}*/
+
+/* (en) Correct overflow displayed oddly in IE 9 */
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* (en) Address margin not present in IE 8/9 and Safari 5 */
+figure {
+  margin: 0;
+}
+
+/* (en) Clear borders for <fieldset> and <img> elements */
+fieldset,
+img { border:0 solid; }
+
+/* (en) new standard values for lists, blockquote, cite and tables */
+ul,
+ol,
+dl { margin:0 0 1em 1em; } 
+
+li {
+  line-height:1.5em;
+  margin-left:0.8em; 
+}
+
+dt { font-weight:bold; }
+dd { margin:0 0 1em 0.8em; } 
+
+blockquote { margin:0 0 1em 0.8em; } 
+q { quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content:none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

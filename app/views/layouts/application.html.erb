@@ -5,17 +5,55 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 7]>
+    <%= stylesheet_link_tag 'iehacks', media:'all', 'data-turbolinks-track' => true %>
+  <![endif]-->    
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag 'html5shiv', 'data-turbolinks-track' => true %>
+  <![endif]-->  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
-  <div class='ym-wrapper'>
-    <div class=' ym-wbox ym-grid linearize-level-1 ym-equalize'>
-      <%= link_to "Home", root_path %>
-      <%= link_to "Create new list", new_list_path %>
-      <%= link_to "Show all lists", lists_path %>
+<body class='container'>
+  <header>
+    <div>
+      <!-- <div class='ym-wbox lineraize-level-1'> -->
+        <%= link_to "Home", root_path %>
+        <%= link_to "Create new list", new_list_path %>
+        <%= link_to "Show all lists", lists_path %>
+        <%= link_to "Home1", root_path %>
+        <%= link_to "Create new list1", new_list_path %>
+        <%= link_to "Show all lists1", lists_path %>
+      <!-- </div> -->
     </div>
-    <%= yield %>
-  </div>
+  </header>
+  <nav class='ym-wrapper'>
+    <div class='grid_wrapper clearfix'>
+      <div class='grid_20'>
+        <div class='grid_box_alpha'>
+          This is the Navigation content. ym-wbox is reqd for padding/margins/borders to boundries.
+        </div>
+      </div>
+      <div class="grid_20">
+        <div class='grid_box'>
+          
+        </div>
+      </div>
+      <div class="grid_20">
+        Grid 60
+      </div>
+      <div class="grid_20">
+        Grid 80
+      </div>
+      <div class="grid_20">
+        Grid last
+      </div>
 
+    </div>
+  </nav>
+  <main class='ym-wrapper' >
+
+    <%= yield %>
+  </main>
 
 </body>
 </html>

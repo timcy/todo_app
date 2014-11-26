@@ -1,0 +1,145 @@
+.smallest_size{
+  font-size: 12px;
+}
+.smaller_size{
+  font-size: 13px;
+}
+.small_size{
+  font-size: 14px;
+}
+
+.big_size{
+  font-size: 16px;
+}
+.bigger_size{
+  font-size: 17px;
+}
+.biggest_size{
+  font-size: 18px;
+}
+.huge_size{
+  font-size: 19px;
+}
+
+
+.right_align{
+  text-align: right;
+}
+.left_align{
+  text-align: left;
+}
+.center_align{
+  text-align: center;
+}
+
+.padding{
+  padding: 10px;
+}
+.padding_top{
+  padding-top: 10px;
+}
+.padding_bottom{
+  padding-bottom: 10px;
+}
+.padding_left{
+  padding-left: 10px;
+}
+.padding_right{
+  padding-right: 10px;
+}
+
+.padding_5{
+  padding: 5px;
+}
+.padding_top_5{
+  padding-top: 5px;
+}
+.padding_bottom_5{
+  padding-bottom: 5px;
+}
+.padding_left_5{
+  padding-left: 5px;
+}
+.padding_right_5{
+  padding-right: 5px;
+}
+
+.padding_20{
+  padding: 20px;
+}
+.padding_top_20{
+  padding-top: 20px;
+}
+.padding_bottom_20{
+  padding-bottom: 20px;
+}
+.padding_left_20{
+  padding-left: 20px;
+}
+.padding_right_20{
+  padding-right: 20px;
+}
+
+
+.margin{
+  margin: 10px;
+}
+.margin_top{
+  margin-top: 10px;
+}
+.margin_bottom{
+  margin-bottom: 10px;
+}
+.margin_left{
+  margin-left: 10px;
+}
+.margin_right{
+  margin-right: 10px;
+}
+
+.margin_5{
+  margin: 5px;
+}
+.margin_top_5{
+  margin-top: 5px;
+}
+.margin_bottom_5{
+  margin-bottom: 5px;
+}
+.margin_left_5{
+  margin-left: 5px;
+}
+.margin_right_5{
+  margin-right: 5px;
+}
+
+.margin_20{
+  margin: 20px;
+}
+.margin_top_20{
+  margin-top: 20px;
+}
+.margin_bottom_20{
+  margin-bottom: 20px;
+}
+.margin_left_20{
+  margin-left: 20px;
+}
+.margin_right_20{
+  margin-right: 20px;
+}
+
+.bold, .strong{
+  font-weight: bold;
+}
+
+.wrap{
+  white-space: pre-wrap; /* css-3 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.wrap{
+  /* white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  /* white-space: -pre-wrap; /* Opera 4-6 */
+  /* white-space: -o-pre-wrap; /* Opera 7 */
+}

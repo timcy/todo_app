@@ -1,0 +1,113 @@
+@media all{
+
+  /* textarea is added for FF browser compatibility */
+  body, textarea {
+    font: 15px/1.5  'Open Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  }
+
+  pre,
+  code {
+    font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace;
+  }  
+
+  h1,h2,h3,h4,h5,h6{
+    font-weight: bold ;
+  }
+  h1{
+    font-size: 12px;
+    line-height: 18px;
+  }
+  h2{
+    font-size:12px;
+  }
+  h3{
+    font-size: 12px;
+  }
+  h4{
+    font-size: 12px;
+  }
+  h5{
+    font-size: 12px;
+  }
+  h6{
+    font-size: 12px;
+  }
+
+  ul,ol{
+    font-size:12px ;
+    line-height: 18px;
+  }
+  ul{
+    list-style-type: disc;
+  }
+  ol{
+    list-style-type: decimal;
+  }
+  ul ul, ol ul{
+    list-style-type: circle;
+  }
+  ol ol{
+    list-style-type: lower-latin;
+  }
+  li{
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  /* General formatting */
+
+  strong, b, .bold{
+    font-weight: bold;
+  }
+
+  i{
+    font-style: italic;
+  }
+  
+  hr{
+    color: black ;
+    border-bottom: 1px black solid;
+  }
+
+  a, a:visited, a:active, a:hover, a:focus{
+    color: red ;
+    /*text-decoration: none;*/
+  }
+  a.underline{
+    text-decoration: underline;
+  }
+
+  .info, .success, .warning, .error{
+    color: red;
+  }
+
+  .float_left{
+    float: left;
+    display: inline;
+  }
+  .float_right{
+    float: right;
+    display: inline;
+  }
+  .float_none{
+    float: none;
+  }
+  .center{
+    display: block;
+    text-align: center;
+  }
+
+  /* box shadow */
+  /* border-radius */
+
+  .flexible{
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* IE6 workaround - 2% space for possible borders */
+  * html .flexible {
+    width: 98%;
+  }
+
+}
