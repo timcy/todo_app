@@ -19,4 +19,6 @@
  *= require forms
  *= require linearize
  *= require lightbox
-*/
+ *= require nivo-slider
+ *= require nivo-slider-default-theme
+ */

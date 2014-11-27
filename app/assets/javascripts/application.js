@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require jquery_nested_form
 //= require lightbox
-//= require_tree .
+//= require jquery.nivo.slider
+// require_tree .

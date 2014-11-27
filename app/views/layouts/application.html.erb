@@ -53,9 +53,22 @@
   <main class='ym-wrapper' >
     <%= yield %>
   </main>
+  <div class="slider-wrapper theme-default">
+    <div id="slider" class="nivoSlider">
+      <%= image_tag('pic1.jpg') %>
+      <%= image_tag('pic2.jpeg') %>
+      <%= image_tag('pic1.jpg') %>
+      <%= image_tag('pic2.jpeg') %>
+    </div>
+  </div>
   <footer>
     <%=  link_to image_tag("close.png", :alt => "Some Image"), asset_path("pic1.jpg"), :'data-lightbox' => 'group', :'data-title' => "Caption" %>
     <%=  link_to image_tag("loading.gif", :alt => "Some Image"), asset_path("pic2.jpeg"), :'data-lightbox' => 'group', :'data-title' => "Caption" %>
   </footer>
 </body>
 </html>
+<script type='text/javascript'>
+  $(document).ready(function(){
+    $('#slider').nivoSlider();  
+  });
+</script>
