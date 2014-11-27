@@ -11,5 +11,12 @@
  * file per style scope.
  *
  *= require_self
- *= require yaml/layout
- */
+ * require yaml/layout
+ *= require normalization
+ *= require grids
+ *= require common
+ *= require typography
+ *= require forms
+ *= require linearize
+ *= require lightbox
+*/
