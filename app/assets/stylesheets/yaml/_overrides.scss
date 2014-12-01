@@ -1,0 +1,94 @@
+$header_max_width   : 960px;
+$content_max_width  : 960px;
+
+
+
+$ym_wbox_padding: 0px 0px;
+
+$ym_header_footer_bg_color: white;
+$ym_header_footer_text_color: black;
+
+$global_text_shadow: 0 0 0 rgba(0,0,0,0);
+
+
+@media screen{
+  .ym-wrapper{
+    max-width: $content_max_width;
+  }
+  .ym-wbox, header .ym-wbox{
+    padding: $ym_wbox_padding;
+  }
+  header, footer{
+    background: $ym_header_footer_bg_color;
+    color: $ym_header_footer_text_color;
+    text-shadow: $global_text_shadow;
+    @include ym-box-shadow(0,-32px,64px,rgba(0,0,0,0),inset);
+  }
+  nav{
+    border: 1px solid black ;
+    background: $ym_header_footer_bg_color;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////
+//////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ToDo - Customizations
+$body_content_max_width: 960px;
+$body_bg_color: white;
+$default_hyperlink_color: red;
+
+@mixin set_padding( $top: 10px, $right: 10px, $bottom: 10px, $left: 10px ){
+  padding: $top $right $bottom $left;
+}
+@mixin set_margin( $top: 10px, $right: auto, $bottom: 10px, $left: auto ){
+  padding: $top $right $bottom $left;
+}
+
+@media screen{
+  .margin{
+    @include set_margin();
+  }
+  .margin_v{
+    @include set_margin(10px,0px,10px,0px);
+  }
+  .margin_h{
+    @include set_margin(0px,10px,0px,10px);
+  }
+  .padding{
+    @include set_padding();
+  }
+  .padding_v{
+    @include set_padding(10px,0px,10px,0px);
+  }
+  .padding_h{
+    @include set_padding(0px,10px,0px,10px);
+  }
+
+  body{
+    overflow-y  : scroll;               // Force vertical scrollbar
+    background  : $body_bg_color;
+    font-size   : 100%;                 // Reset the font-size to standard (16 pixels) -- Already done in normalization
+  }
+
+  body > header,
+  body > nav,
+  body > footer{
+    max-width : $header_max_width;
+  }
+
+  body > [id],
+  body > content,
+  body > #content{
+    max-width : $content_max_width;
+  }
+  a{
+    text-align: center;
+    display: inline-block;        // With inline-block, padding can be applied to a tags
+    @include set_padding( 5px,5px,5px,5px );
+  }
+  a:active, a:visited{
+    color: $default_hyperlink_color;
+  }
+}

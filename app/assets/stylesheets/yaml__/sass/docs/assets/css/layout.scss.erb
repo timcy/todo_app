@@ -1,0 +1,43 @@
+@charset "utf-8";
+/**
+ * "Yet Another Multicolumn Layout" - YAML CSS Framework
+ *
+ * docs styles - dynamically built using Sass
+ *
+ * @copyright       © 2005-2013, Dirk Jesse
+ * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-CDL (http://www.yaml.de/license.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         ### version ###
+ */
+
+/* YAML Framework Components */
+@import url(<%= asset_path( '_yaml-var-globals') %>);
+@import url(<%= asset_path( 'yaml-mixins-core') %>);
+@import url(<%= asset_path( 'base') %>);  // Taken care of - adds the entire base.css from base-module partials.
+@import url(<%= asset_path( 'vlist') %>); // Can be called explicitly in application.css - No problem
+@import url(<%= asset_path( 'hlist') %>); // Can be called explicitly in application.css - No problem
+@import url(<%= asset_path( 'gray-theme') %>); // Can be called explicitly in application.css - No problem
+@import url(<%= asset_path( 'tabs') %>);  // Can be called explicitly in application.css - No problem
+@import url(<%= asset_path( 'microformats') %>);  // No need to include this
+@import url(<%= asset_path( 'typography') %>);  // Can be called explicitly in application.css - No problem
+@import url(<%= asset_path( 'print') %>);   
+@import url(<%= asset_path( 'screen' ) %>);
+
+
+/*
+@import "yaml-sass/yaml-var-globals",
+		"yaml-sass/mixins/yaml-mixins-core",
+		"yaml-sass/core/base",
+		"yaml-sass/navigation/vlist",
+		"yaml-sass/navigation/hlist",
+		"yaml-sass/forms/gray-theme",
+		"yaml-sass/add-ons/accessible-tabs/tabs",
+		"yaml-sass/add-ons/microformats/microformats",
+		"yaml-sass/screen/typography",
+		"yaml-sass/print/print";
+*/
+
+/* Screen Design */
+//@import "docs/assets/css/screen";

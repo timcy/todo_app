@@ -26,3 +26,35 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+
+
+Yaml
+yamlcss install --path lib/assets
+yamlcss install --path app/assets/stylesheets
+
+Hacks -
+Manually set the import commands in files.
+
+
+Linearization is in screen-LAYOUT-files and in screen.scss
+
+
+Screen.scss ToDos
+1.  Remember when to have width's in %, and margins in 0,auto
+    This will help in responsive css
+2.  See when to include media query part from screen.css
+3. Check .mnav - I think it is used for mobile navigation styling
+4. transition/-moz-transition/-webkit-transition
+5. zoom : 1
+6. usage of color: #667766, and color: rgba(255,255,255,.5)
+7. overflow - hidden / visible
+8. filter
+    /* IE5.5 - IE7 */
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FF161E21,EndColorStr=#FF2C3336);
+    /* IE8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#FF161E21,EndColorStr=#FF2C3336)";
+9. body { overflow-y: scroll }
+10. Is mentioning line-height in CSS required ? Google - 'CSS line-height issues';
+11. display : inline/inline-block/block;
+12. CSS selectors & > *

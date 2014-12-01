@@ -44,8 +44,8 @@
 
 .clearfix:before,
 .clearfix:after,
-.container_12:before,
-.container_12:after {
+.container:before,
+.container:after {
   content: '.';
   display: block;
   overflow: hidden;
@@ -57,6 +57,6 @@
 }
 
 .clearfix:after,
-.container_12:after {
+.container:after {
   clear: both;
 }
