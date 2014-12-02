@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 gem 'simple_form'
 gem 'nested_form'
 
+gem 'devise'
+gem 'omniauth-twitter'
+
 gem 'haml-rails'
 
 # Use ActiveModel has_secure_password
