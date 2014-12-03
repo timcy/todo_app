@@ -7,6 +7,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :user_name,          :unique => true
+      t.string :provider
+      t.string :uid
 
       t.string :encrypted_password, null: false, default: ""
 

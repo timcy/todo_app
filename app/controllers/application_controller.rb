@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # ADDITIONAL permitted params 
-    devise_parameter_sanitizer.for(:sign_up) << :user_name, :first_name, :last_name
+    devise_parameter_sanitizer.for(:sign_up) << [ :user_name, :first_name, :last_name ]
     # devise_parameter_sanitizer.for(:sign_in) << :user_name
     # Overriding Devise default and adding permitted params
     devise_parameter_sanitizer.for(:account_update){
