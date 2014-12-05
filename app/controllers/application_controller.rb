@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     # devise_parameter_sanitizer.for(:sign_in) << :user_name
     # Overriding Devise default and adding permitted params
     devise_parameter_sanitizer.for(:account_update){
-      |u| u.permit( :email, :user_name, :first_name, :last_name, :password, :password_confirmation, :current_password )
+      |u| u.permit( :email, :user_name, :first_name, :last_name, :password, :password_confirmation, :current_password, :roles )
     }
   end
 end

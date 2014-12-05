@@ -30,9 +30,11 @@ gem 'simple_form'
 gem 'nested_form'
 
 gem 'devise'
+gem 'role_model'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
+
 
 gem 'haml-rails'
 

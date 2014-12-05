@@ -5,6 +5,14 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :linkedin]
 
+  include RoleModel
+
+  # set the integer attribute to store the roles in
+  roles_attribute :roles_mask
+
+  # do not change the order if you add more roles later, always append them at the end!
+  roles :admin, :coach, :recruit, :player, :alumni
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
