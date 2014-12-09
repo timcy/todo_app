@@ -33,6 +33,10 @@ gem 'devise'
 gem 'cancan'
 gem 'role_model'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
+
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
