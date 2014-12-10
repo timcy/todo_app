@@ -36,6 +36,8 @@ gem 'role_model'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'will_paginate', '~> 3.0'
+# gem 'activeadmin', github: 'activeadmin'
 
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'

@@ -1,0 +1,7 @@
+$("#products").append("<%= escape_javascript( render :partial=>'products') %> ")
+<% if @products.next_page %>
+  $('.pagination').html('<%= escape_javascript( will_paginate(@products)) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
+<%# sleep 5 %>
