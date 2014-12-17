@@ -1,6 +1,10 @@
 class ListsController < ApplicationController
+
+  respond_to :html, :json
+
   def new
     @list = List.new
+    # respond_modal_with @list
   end
 
   def create

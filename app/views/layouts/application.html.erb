@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
 </head>
 <body>
   <div>
@@ -13,10 +15,17 @@
     <%= link_to "Show all lists", lists_path %>
     <%= link_to "Logout", destroy_user_session_path, :method => :delete%>
 
+    <%#= link_to 'Create new list', new_list_path, data: { modal: true } %>
+    <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+    <%= link_to "Create new list", new_list_path, data: { :'reveal-id' => 'myModal', :'reveal-ajax' => true } %>
   </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-<%= yield %>
-
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+  <div id="modal-holder"></div>
+  <div id="myModal" class="reveal-modal" data-reveal>
+      <%= render :partial => 'lists/form', :locals => { :@list => List.new } %>
+      <a class="close-reveal-modal">&#215;</a>
+  </div>
 </body>
 </html>

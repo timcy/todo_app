@@ -15,4 +15,8 @@
 //= require turbolinks
 //= require jquery_nested_form
 //= require products
+//= require foundation
+//= require foundation.reveal
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
