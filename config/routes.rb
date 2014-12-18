@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   root :to => "lists#index"
 
   resources :lists
+  get 'calendar' => 'lists#calendar_view', as: :calendar_view
 
   resources :products
+
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

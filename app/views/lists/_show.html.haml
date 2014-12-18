@@ -1,0 +1,5 @@
+%p 
+  = @list.heading
+- @list.tasks.each do |task|
+  %p
+    = task.description

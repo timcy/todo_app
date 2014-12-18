@@ -20,8 +20,21 @@ class ListsController < ApplicationController
     @lists = List.all.order(:created_at => :desc)
   end
 
+  def calendar_view
+    @lists_by_date = List.all.group_by{|i| i.created_at.to_date}
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end    
+  end
+
   def show
     @list = List.find(params[:id])
+    respond_to do |format|
+      format.html {}
+      format.js {}
+    end      
   end
 
   def edit
@@ -30,13 +43,9 @@ class ListsController < ApplicationController
 
   def update
     @list = List.find(params[:id])
-    # puts "*" * 80
-    # puts @list.tasks
-    # puts params
-    # puts "*" * 80
     @list.update(list_params)
     respond_to do |format|
-      format.html { } #redirect_to @list }
+      format.html { }
       format.js {}
     end
   end
@@ -45,7 +54,7 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     if @list.destroy
       respond_to do |format|
-        format.html { } #redirect_to lists_path }
+        format.html { }
         format.js { }
       end
     end

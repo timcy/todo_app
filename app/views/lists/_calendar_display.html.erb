@@ -1,0 +1,17 @@
+<div id='calendar'>
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month, remote: true %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.next_month, remote: true %>
+  </h2>
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if @lists_by_date[date] %>
+      <ul>
+        <% @lists_by_date[date].each do |list| %>
+          <li><%= link_to list.heading, list, remote: true %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
