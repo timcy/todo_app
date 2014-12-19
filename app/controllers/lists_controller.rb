@@ -22,19 +22,22 @@ class ListsController < ApplicationController
 
   def calendar_view
     @lists_by_date = List.all.group_by{|i| i.created_at.to_date}
+    puts "*" * 80
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    respond_to do |format|
-      format.html {}
-      format.js {}
-    end    
+    respond_modal_with @lists_by_date, layout: :modal
+    # respond_to do |format|
+    #   format.html {}
+    #   format.js {}
+    # end    
   end
 
   def show
     @list = List.find(params[:id])
-    respond_to do |format|
-      format.html {}
-      format.js {}
-    end      
+    respond_modal_with @list, layout: :modal
+        # respond_to do |format|
+    #   format.html {}
+    #   format.js {}
+    # end      
   end
 
   def edit

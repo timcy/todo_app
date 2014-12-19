@@ -15,6 +15,7 @@
     <%= link_to "Show all lists", lists_path %>
     <%= link_to "Logout", destroy_user_session_path, :method => :delete%>
     <%= link_to "calendar view", calendar_view_path %>
+    <%= link_to "calendar view", calendar_view_path, data: { modal: true } %>
 
     <%#= link_to 'Create new list', new_list_path, data: { modal: true } %>
     <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>

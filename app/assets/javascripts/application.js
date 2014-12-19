@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery_nested_form
+//= require bootstrap-sprockets
 //= require products
 //= require foundation
 //= require foundation.reveal
