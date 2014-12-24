@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210065950) do
+ActiveRecord::Schema.define(version: 20141223061027) do
+
+  create_table "duties", force: true do |t|
+    t.string   "name"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "urgency"
+    t.string   "display_in"
+    t.boolean  "send_reminder"
+    t.integer  "created_by"
+    t.string   "repeat"
+    t.text     "notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "lists", force: true do |t|
     t.string   "heading"

@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem 'simple_form'
 gem 'nested_form'
 gem 'bootstrap-sass'
+gem 'ice_cube'
 
 gem 'devise'
 gem 'cancan'

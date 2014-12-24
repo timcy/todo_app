@@ -22,6 +22,7 @@ class ListsController < ApplicationController
 
   def calendar_view
     @lists_by_date = List.all.group_by{|i| i.created_at.to_date}
+    # @lists_by_date = List.group(:created_at).pluck(:heading, :created_at)
     puts "*" * 80
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
     respond_modal_with @lists_by_date, layout: :modal
