@@ -15,7 +15,7 @@ class Duty < ActiveRecord::Base
   end
 
   def repeat_never?
-    self.repeat == 'never'
+    self.repeat == 'never' || self.repeat == nil
     # d = Duty.new(name: "Duty 1", start_date: Time.now, end_date: Time.now + 3.hours, send_reminder: true, urgency: "red", repeat: "tomorrow")
   end
 
@@ -34,25 +34,20 @@ class Duty < ActiveRecord::Base
 
     return if repeat_never?
 
-    repeat_till = Time.now + 3.days
     # Should come from attr_accessor
+    repeat_till = Time.now + 3.days
+    
     start = self.start_date.to_date
     # finish = self.repeat_till.to_date
     finish = repeat_till.to_date
 
-
     if self.repeat.in?( ["tomorrow", "next_month", "next_year"] )
-      # puts "$" * 80
-      # puts start
-      # puts finish
-      while ( start <= finish ) do
-        recurring_duty = Duty.new( name: self.name, urgency: self.urgency, display_in: self.display_in, send_reminder: self.send_reminder, notes: self.notes, created_by: self.created_by )
-        recurring_duty.repeat = nil   # To prevent from looping
-        recurring_duty.start_date = start.send("#{self.repeat}")
-        recurring_duty.end_date = recurring_duty.start_date + (self.end_date.to_date - self.start_date.to_date).to_i
+      while ( start < finish ) do
         puts "*" * 80
-        puts recurring_duty.start_date
-        puts recurring_duty.end_date
+        puts "Start - " + start.to_s
+        puts "Finish - " + finish.to_s
+        puts "*" * 80
+        recurring_duty = set_recurring_duty_attributes( start.send("#{self.repeat}") )
         recurring_duty.save
         start = start.send("#{self.repeat}")
       end
@@ -72,11 +67,7 @@ class Duty < ActiveRecord::Base
 
       "#{self.repeat}".each do |next_duty_day|
         while ( start <= finish ) do
-          recurring_duty = Duty.new( name: self.name, urgency: self.urgency, display_in: self.display_in, send_reminder: self.send_reminder, notes: self.notes, created_by: self.created_by )
-          recurring_duty.repeat = nil   # To prevent from looping
-          recurring_duty.start_date = start + next_duty_day
-          # Set the end_date based on the difference in days between self.start_date and self.end_date
-          recurring_duty.end_date = recurring_duty.start_date + (self.end_date.to_date - self.start_date.to_date).to_i
+          recurring_duty = set_recurring_duty_attributes( start + next_duty_day )
           recurring_duty.save
           start += 7.days
         end
@@ -84,4 +75,16 @@ class Duty < ActiveRecord::Base
       end
     end
   end
+
+  def set_recurring_duty_attributes( start_date  )
+    rd = Duty.new( name: self.name, urgency: self.urgency, display_in: self.display_in, send_reminder: self.send_reminder, notes: self.notes, created_by: self.created_by )
+    rd.repeat = nil   # To prevent from looping
+    rd.start_date = start_date
+    rd.start_date = rd.start_date.change(hour: self.start_date.hour, min: self.start_date.min )
+    # Set the end_date based on the difference in days between self.start_date and self.end_date
+    rd.end_date = rd.start_date + (self.end_date.to_date - self.start_date.to_date).to_i
+    rd.end_date = rd.end_date.change(hour: self.end_date.hour, min: self.end_date.min )
+    return rd
+  end
+
 end
